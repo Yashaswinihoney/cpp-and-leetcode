@@ -1,0 +1,1 @@
+{"name":"Local: 16","url":"/Users/yashaswinisharma/Desktop/cpp/cp/16.cpp","tests":[{"id":1622066239585,"input":"3\n1 1\n2 2\n3 3\n","output":"0"},{"id":1622066247632,"input":"3\n1 10\n0 10\n10 10","output":"2"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/yashaswinisharma/Desktop/cpp/cp/16.cpp","group":"local","local":true}

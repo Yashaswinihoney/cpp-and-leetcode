@@ -1,0 +1,14 @@
+{
+    "C_Cpp.errorSquiggles": "Enabled",
+    "files.associations": {
+        "iostream": "cpp",
+        "new": "cpp",
+        "queue": "cpp",
+        "ostream": "cpp"
+    },
+    "C_Cpp.default.cppStandard": "c++17",
+    "C_Cpp.default.cStandard": "c17",
+    "C_Cpp.default.defines": [],
+    "C_Cpp.default.browse.path": [],
+    "C_Cpp.default.configurationProvider": "c++17"
+}

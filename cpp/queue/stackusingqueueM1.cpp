@@ -1,0 +1,65 @@
+//METHOD 1
+//push is more complex and costly
+#include<iostream>
+#include<queue>
+using namespace std;
+
+class Stack{
+    int N;
+    queue<int> q1;
+    queue<int> q2;
+
+    public:
+    Stack(){
+        N=0;
+    }
+
+    void push(int val){
+        q2.push(val);
+        N++;
+        while(!q1.empty()){
+            q2.push(q1.front());
+            q1.pop();
+        }
+        swap(q1,q2);
+    }
+
+    int pop(){
+
+        if(N==0){
+            cout<<"stack underflow"<<endl;
+            return -1;
+        }
+        int ele=q1.back();
+        q1.pop();
+        N--;
+        return ele;
+    }
+
+    int top(){
+        return q1.front();
+    }
+
+    int size(){
+        return N;
+    }
+};
+int main(){
+    Stack st;
+    st.push(1);
+    st.push(2);
+    st.push(3);
+    st.push(4);
+
+    cout<<st.top()<<endl;
+    st.pop();
+    cout<<st.top()<<endl;
+    st.pop();
+    cout<<st.size()<<endl;
+    st.pop();
+    st.pop();
+    cout<<st.size()<<endl;
+    return 0;
+}
+
+
