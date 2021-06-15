@@ -34,7 +34,7 @@ class myHash{
     bool insert(int key){
         if(size==cap) return false;
         int h=key%cap;
-        while(v[h]>0&&v[h]!=key){
+        while(v[h]!=-1&&v[h]!=-2&&v[h]!=key){
             h=(h+1)%cap;
         }
         if(v[h]==key) return false;
@@ -51,7 +51,8 @@ class myHash{
         int i=h;
         while(v[i]!=-1){
             if(v[i]==key){
-                v[i]=-1;
+                v[i]=-2;
+                size--;
                 return true;
             }
             i=(i+1)%cap;
