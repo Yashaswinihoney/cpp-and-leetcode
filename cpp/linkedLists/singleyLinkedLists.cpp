@@ -205,6 +205,44 @@ void removeCycle(node* &head){
     
 }
 
+//method 2 and better
+/*void removeLoop(Node* head)
+    {
+        if(!head) return;
+        
+        Node *slow = head;
+        Node *fast = head->next;
+        
+        while(slow!=fast){
+            if(!fast || !fast->next){
+                return;
+            }
+            else{
+                fast = fast->next->next;
+                slow = slow->next;
+            }
+        }
+        int size = 1;
+        fast = fast->next;
+        
+        while( fast != slow )
+        {
+            size++;
+            fast = fast->next;
+        }
+        
+        slow = fast = head;
+        for(int i=0; i<size-1; i++)
+            fast = fast->next;
+            
+        while(fast->next!=slow){
+            fast = fast->next;
+            slow = slow->next;
+        }
+        fast->next = NULL;
+        // code here
+        // just remove the loop without losing any nodes
+    }*/
 //finding the length of the ll
 int length(node* head){
     int l=0;
