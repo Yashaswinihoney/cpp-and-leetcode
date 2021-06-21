@@ -98,16 +98,16 @@ int main(){
 		cache.set(2, 20); 
 		cout<<"Value for the key: 1 is " << cache.get(1)<<endl; // returns 10 
 
-		// removing key 2 and store a key (3) with value 30 in the cache. 
+		// removing key 1 and store a key (3) with value 30 in the cache. 
 		cache.set(3, 30); 
 
 		cout<<"Value for the key: 2 is " << 
 				cache.get(2)<<endl; // returns 20
 
-		// removing key 1 and store a key (4) with value 40 in the cache. 
+		// removing key 2 and store a key (4) with value 40 in the cache. 
 		cache.set(4, 40); 
 		cout<<"Value for the key: 1 is " << 
-			cache.get(1)<<endl; // returns -1 (not found) 
+			cache.get(2)<<endl; // returns -1 (not found) 
 		cout<<"Value for the key: 3 is " << 
 						cache.get(3)<<endl; // returns 30 
 		cout<<"Value for the key: 4 is " << 
