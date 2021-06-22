@@ -12,6 +12,30 @@ class Node{
     }
 };
 
+void preorder(Node* root){
+    if(root==NULL) return;
+    stack<Node*> s;
+    s.push(root);
+
+    while (!s.empty())
+    {
+        Node* curr=s.top();
+        s.pop();
+        cout<<curr->val<<" ";
+        s.push(curr->right);
+        s.push(curr->left);
+    }
+}
+
+void postorder(Node* root){
+    if(root==NULL) return;
+
+    stack<Node*> s;
+    s.push(root);
+
+
+}
+
 void inorder(Node* root){
     
     stack<Node*> s;
