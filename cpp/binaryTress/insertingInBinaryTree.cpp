@@ -438,9 +438,10 @@ int main(){
     //cout<<maxwidth(root);
     //cout<<diameter(root);
     //printSpiral(root);
-    preorder(root);
-    cout<<endl;
-    deletetion(root,4);
-    preorder(root);
+    //preorder(root);
+    //cout<<endl;
+    //deletetion(root,4);
+    //preorder(root);
+    printSpiral(root);
     return 0;
 }
