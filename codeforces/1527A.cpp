@@ -11,9 +11,9 @@ int main(){
         n--;
         while(n--){
             res=res&n;
-            if(res==0){
+            if(res==0)
                 cout<<n+1<<endl; break;
-            }
+            
         }
     }
     return 0;
