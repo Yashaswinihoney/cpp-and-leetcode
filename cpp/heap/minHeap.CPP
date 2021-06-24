@@ -33,4 +33,19 @@ class MinHeap{
             i=parent(i);
         }
     }
+
+    void minHeapify(int i){
+        int l=left(i), r=right(i), smallest=i;
+
+        if(l<size&&arr[l]<arr[i]){
+            smallest=l;
+        }
+        if(r<size&&arr[r]<arr[smallest]){
+            smallest=r;
+        }
+        if(smallest!=i){
+            swap(arr[i],arr[smallest]);
+            minHeapify(smallest);
+        }
+    }
 };
