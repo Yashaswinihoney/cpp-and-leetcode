@@ -7,9 +7,9 @@ class MinHeap{
     int cap;
 
     MinHeap(int c){
-        arr=new int[c];
         cap=c;
         size=0;
+        arr=new int[c];
     }
 
     int left(int i){
@@ -47,5 +47,21 @@ class MinHeap{
             swap(arr[i],arr[smallest]);
             minHeapify(smallest);
         }
+    }
+
+    int getMin(){
+        return arr[0];
+    }
+
+    int extractMin(){
+        if(size<=0) return -1;
+        if(size==1){
+            size--;
+            return arr[0];
+        }
+        swap(arr[0],arr[size-1]);
+        size--;
+        minHeapify(0);
+        return arr[size];
     }
 };
