@@ -1,0 +1,1 @@
+{"name":"Local: 1520B","url":"/Users/yashaswinisharma/Desktop/cpp-and-leetcode/codeforces/1520B.cpp","tests":[{"id":1624662663405,"input":"6\n1\n2\n3\n4\n5\n100\n","output":"1\n2\n3\n4\n5\n18\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/yashaswinisharma/Desktop/cpp-and-leetcode/codeforces/1520B.cpp","group":"local","local":true}
