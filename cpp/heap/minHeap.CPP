@@ -1,4 +1,6 @@
 #include<iostream>
+#include<utility>
+#define INT_MIN -100
 using namespace std;
 class MinHeap{
     public:
@@ -63,5 +65,18 @@ class MinHeap{
         size--;
         minHeapify(0);
         return arr[size];
+    }
+
+    void decreasekey(int i, int x){
+        arr[i]=x;
+        while(i!=0&&arr[parent(i)]>arr[i]){
+            swap(arr[parent(i)],arr[i]);
+            i=parent(i);
+        }
+    }
+
+    void deleteKey(int i){
+        decreasekey(i,INT_MIN);
+        extractMin();
     }
 };
