@@ -79,4 +79,10 @@ class MinHeap{
         decreasekey(i,INT_MIN);
         extractMin();
     }
+
+    void BuildHeap(){
+        for(int i=(size-2)/2;i>=0;i--){
+            minHeapify(i);
+        }    
+    }
 };
