@@ -108,4 +108,12 @@ class MinHeap{
             maxHeapify(arr,size,i);
         }
     }
+
+    void heapSort(int arr[], int n){
+        buildHeap();
+        for(int i=n-1;i>=0;i--){
+            swap(arr[0],arr[i]);
+            maxHeapify(arr,i,0);
+        }
+    }
 };
