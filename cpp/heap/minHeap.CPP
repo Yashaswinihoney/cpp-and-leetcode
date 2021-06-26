@@ -80,7 +80,7 @@ class MinHeap{
         extractMin();
     }
 
-    //using min heap
+    //using min heap or in a increaing order
     void BuildHeap(){
         for(int i=(size-2)/2;i>=0;i--){
             minHeapify(i);
@@ -99,6 +99,13 @@ class MinHeap{
         if(largest!=i){
             swap(arr[largest],arr[i]);
             maxHeapify(arr, n, largest);
+        }
+    }
+
+    ///building a heap using maxHeap or in a decreasing order
+    void buildHeap(){
+        for(int i=(size-2)/2;i!=0;i--){
+            maxHeapify(arr,size,i);
         }
     }
 };
