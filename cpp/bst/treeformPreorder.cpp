@@ -72,7 +72,7 @@ Node* tree(int pre[], int size){
 
     //method 2, by setting the range of a node
     //int place if -100 and +100 use INT_MIN and INT_MAX
-    return construct2(pre,&preIndex, pre[0], -100, +100,size);
+    //return construct2(pre,&preIndex, pre[0], -100, +100,size);
 }
 
 int main(){
