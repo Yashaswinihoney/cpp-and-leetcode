@@ -14,7 +14,7 @@ class Node{
     }
 };
 
-//mergeing the binomial heap
+//mergeing the binomial tree
 Node* mergeBinTree(Node* b1, Node* b2){
     //making sure that b1 is smaller
     if(b1->data>b2->data){
