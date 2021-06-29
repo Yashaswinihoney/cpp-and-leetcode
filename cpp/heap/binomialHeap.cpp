@@ -14,7 +14,8 @@ class Node{
     }
 };
 
-//mergeing the binomial tree
+//merging the binomial tree
+//only those binomial trees can be merged whose degrees are same
 Node* mergeBinTree(Node* b1, Node* b2){
     //making sure that b1 is smaller
     if(b1->data>b2->data){
@@ -70,6 +71,8 @@ list<Node*> adjust(list<Node*> _heap)
     if (_heap.size() <= 1)
         return _heap;
     list<Node*> new_heap;
+
+    //for maintaing the previous, current and next
     list<Node*>::iterator it1,it2,it3;
     it1 = it2 = it3 = _heap.begin();
   
