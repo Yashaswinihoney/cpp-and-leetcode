@@ -3,6 +3,8 @@
 #include<vector>
 using namespace std;
 void sortK(vector<int> &a, int n, int k){
+    //to maintain a min heap 
+    //since by default pq is max heap in c++
     priority_queue<int, vector<int>, greater<int> > pq;
     for(int i=0;i<=k;i++){
         pq.push(a[i]);
