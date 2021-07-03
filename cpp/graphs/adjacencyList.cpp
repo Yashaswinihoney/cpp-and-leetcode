@@ -1,6 +1,8 @@
 #include<iostream>
 #include<vector>
 using namespace std;
+
+//for adding edges for undirected graphs
 void addEdge(vector<vector<int>> adj, int u, int v){
     adj[u].push_back(v);
     adj[v].push_back(u);
