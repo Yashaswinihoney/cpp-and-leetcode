@@ -7,6 +7,13 @@ void addEdge(vector<vector<int>> adj, int u, int v){
     adj[u].push_back(v);
     adj[v].push_back(u);
 }
+
+//printing the graph
+void printGraph(vector<vector<int>> adj, int v){
+    for(int i=0;i<adj[v].size();i++){
+        cout<<adj[v][i]<<" ";
+    }
+}
 int main(){
     int v=4;
     vector<vector<int>> adj(v);
