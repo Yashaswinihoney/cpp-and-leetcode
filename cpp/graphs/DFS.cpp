@@ -23,6 +23,9 @@ void DFSrec(vector<vector<int> > adj, vector<bool>& visited, int s){
 //dfs wrapper function
 void DFS(vector<vector<int> > adj, int v, int s){
     vector<bool> visited(v,false);
+    //s here mentioned is like the root in 
+    //binary trees, to provide a starting 
+    //point for the traversal of a graph 
     DFSrec(adj,visited,s);
 }
 
