@@ -17,6 +17,9 @@ void BFS(vector<vector<int> > adj, int v, int s, vector<int> &dist){
         q.pop();
         for(int v:adj[curr]){
             if(visited[v]==false){
+                //since v is the adjacent of curr 
+                //the distance will be incremented by 1
+        
                 dist[v]=dist[curr]+1;
                 visited[v]=true;
                 q.push(v);
