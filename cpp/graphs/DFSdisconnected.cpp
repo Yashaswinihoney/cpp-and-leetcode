@@ -60,8 +60,8 @@ void DFSRec(vector<vector<int> > adj, int s, vector<bool> &visited)
 
 void DFS(vector<vector<int> > adj, int V){
     vector<bool> visited(V,false); 
-	for(int i = 0;i<V; i++) 
-		visited[i] = false;
+	/*for(int i = 0;i<V; i++) 
+		visited[i] = false;*/
 		
     for(int i=0;i<V;i++){
         if(visited[i]==false)
