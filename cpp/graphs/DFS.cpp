@@ -25,7 +25,10 @@ void DFS(vector<vector<int> > adj, int v, int s){
     vector<bool> visited(v,false);
     //s here mentioned is like the root in 
     //binary trees, to provide a starting 
-    //point for the traversal of a graph 
+    //point for the traversal of a graph
+    
+    //this method works for only the graphs which are undirected and connected
+
     DFSrec(adj,visited,s);
 }
 
