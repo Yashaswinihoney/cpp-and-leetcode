@@ -8,15 +8,19 @@ void add(vector<vector<int> > &adj, int u, int v){
     adj[v].push_back(u);
 }
 
+//dfs for connected undirected graph
+//recurrsive function
 void DFSrec(vector<vector<int> > adj, vector<bool>& visited, int s){
     visited[s]=true;
-    for(int i=0;i<adj[s].size();i++){
+    cout<<s<<" ";
+    for(auto i:adj[s]){
         if(visited[i]==false){
             DFSrec(adj,visited,i);
         }
     }
 }
 
+//dfs wrapper function
 void DFS(vector<vector<int> > adj, int v, int s){
     vector<bool> visited(v,false);
     DFSrec(adj,visited,s);
