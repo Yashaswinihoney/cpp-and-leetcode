@@ -11,24 +11,20 @@ void addEdge(vector<vector<int> > &adj, int u, int v){
 
 //printing the graph
 void printGraph(vector<vector<int> > adj, int v){
-    /*for (int i = 0; i < v; i++) 
-    { 
-        for (int x : adj[i]) 
-           cout << x <<" "; 
-        cout<<"\n"; 
-    }*/
-    
     for(int i=0;i<v;i++){
-        /*for(int j=0;i<v;j++){
+        for(int j=0;j<adj[i].size();j++){
             cout<<adj[i][j]<<" ";
-        }*/
+        }
+        /*
         for(auto x: adj[i]){
             cout<<x<<" ";
-        }
+        }*/
         cout<<endl;
     }
 }
 
+
+//bfs for a connected undirected graph
 void BFS(vector<vector<int> > adj, int v, int s){
     vector<bool> visited(v,false);
     queue<int> q;
@@ -47,6 +43,17 @@ void BFS(vector<vector<int> > adj, int v, int s){
         }
     }
 }
+
+
+//bfs for undirected disconnected graph
+void BFSDis(vector<vector<int> > adj, int v){
+    vector<bool> visited(v+1,false);
+    for(int i=0;i<v;i++){
+        if(visited[i]==false){
+            BFS(adj,v,i);
+        }
+    }
+}
 int main(){
     int v=5;
 	vector<vector<int> > adj(v);
@@ -58,7 +65,7 @@ int main(){
 	addEdge(adj,3,4);
 	addEdge(adj,2,4);
 
-    //printGraph(adj,4);
-    BFS(adj,v,0);
+    printGraph(adj,4);
+    //BFS(adj,v,0);
     return 0;
 }
