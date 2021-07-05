@@ -33,7 +33,7 @@ bool DFS(vector<vector<int> > adj, int V){
 
 int main(){
     int V=6;
-    vector<vector<int> > adj;
+    vector<vector<int> > adj(V);
     addEdge(adj,0,1);
     addEdge(adj,1,2);
     addEdge(adj,2,4);
