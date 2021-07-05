@@ -25,6 +25,7 @@ bool DFS(vector<vector<int> > adj ,int V){
     vector<bool> visited(V,false);
     vector<bool> recSt(V, false);
 
+    //to handle disconnected graphs
     for(int i=0;i<V;i++){
         if(visited[i]==false){
             if(DFSrec(adj,i,visited,recSt)) return true;
