@@ -43,6 +43,11 @@ void topologicalSort(vector<vector<int> > adj, int V){
 int main(){
     int V=5;
     vector<vector<int> > adj(V);
+    addEdge(adj,0,2);
+    addEdge(adj,0,3);
+    addEdge(adj,1,3);
+    addEdge(adj,1,4);
+    addEdge(adj,2,3);
     topologicalSort(adj, V);
     return 0;
 }
