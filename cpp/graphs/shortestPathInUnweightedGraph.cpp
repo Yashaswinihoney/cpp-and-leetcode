@@ -2,6 +2,8 @@
 #include<vector>
 #include<queue>
 using namespace std;
+
+//in undirected acyclic graph
 void addEdge(vector<vector<int> > &adj, int u, int v){
     adj[u].push_back(v);
     adj[v].push_back(u);
