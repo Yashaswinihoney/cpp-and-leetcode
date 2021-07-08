@@ -12,6 +12,7 @@ class AdjListNode{
     int v;
     int weight;
     
+    //constructor for the node
     AdjListNode(int _v, int _w){
         v=_v;
         weight=_w;
