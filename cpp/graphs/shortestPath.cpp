@@ -69,6 +69,7 @@ void Graph::topologicalSort(int v, vector<bool>& visited, stack<int>& st){
     st.push(v);
 }
 
+//main wrapper function
 void Graph::shortestPath(int s){
     stack<int> st;
     vector<int> dist(V,100);
