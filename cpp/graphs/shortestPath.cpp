@@ -76,6 +76,7 @@ void Graph::shortestPath(int s){
     vector<int> dist(V,100);
     vector<bool> visted(V,false);
 
+    //topologically sorting the elements into a stack using dfs
     for(int i=0;i<V;i++){
         if(visted[i]==false){
             topologicalSort(i,visted,st);
