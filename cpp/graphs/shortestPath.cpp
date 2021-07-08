@@ -49,6 +49,7 @@ Graph::Graph(int v)
 	adj = new list<AdjListNode>[V]; 
 }
 
+//adding edge, v to u of weight
 void Graph::addEdge(int u, int v, int weight){
     AdjListNode node(v,weight);
     adj[u].push_back(node);
