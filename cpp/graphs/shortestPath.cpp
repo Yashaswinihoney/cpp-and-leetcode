@@ -1,54 +1,9 @@
-//to find the shortest path in a directed acyclic graph
-/*#include<iostream>
-#include<vector>
-#define INF INT_MAX
-using namespace std;
-
-// this class defines the node of the graph
-class AdjListNode{
-    public:
-    int v;
-    int weight;
-
-    //contructor to intitialise a adj list
-    //wieghted node, of the given index and weight
-    AdjListNode(int _v, int _w){
-        v=_v;
-        weight=_w;
-    }
-    int getV(){
-        return v;
-    }
-    int getWeight(){
-        return weight;
-    }
-};
-
-class Graph{
-    public:
-    int V;
-    vector<AdjListNode> *adj;
-    void topologicalSort(int v, vector<bool>& visited, vector<int> st);
-
-    Graph(int v){
-        V=v;
-        adj=vector<AdjListNode>(V);
-    }
-    void addEdge(int u, int v, int weight);
-    void shortestPath(int s);
-};
-
-void Graph::addEdge(int u,int v, int weight){
-    AdjListNode node(v,weight);
-    adj[u].push_back(node);
-}*/
-
 #include<iostream>
 #include<vector>
 #include<iterator>
 #include<stack>
 #include<list>
-#define INF 100
+//#define INF 100
 using namespace std;
 
 //defining the node of a weighted directed graph
@@ -87,6 +42,12 @@ class Graph{
     void shortestPath(int s);
 };
 
+Graph::Graph(int v) 
+{ 
+	this->V = v; 
+	adj = new list<AdjListNode>[V]; 
+}
+
 void Graph::addEdge(int u, int v, int weight){
     AdjListNode node(v,weight);
     adj[u].push_back(node);
@@ -108,7 +69,7 @@ void Graph::topologicalSort(int v, vector<bool>& visited, stack<int>& st){
 
 void Graph::shortestPath(int s){
     stack<int> st;
-    vector<int> dist(V,INF);
+    vector<int> dist(V,100);
     vector<bool> visted(V,false);
 
     for(int i=0;i<V;i++){
@@ -129,7 +90,7 @@ void Graph::shortestPath(int s){
         
         list<AdjListNode>::iterator i;
 
-        if(dist[u]!=INF){
+        if(dist[u]!=100){
             for(i=adj[u].begin();i!=adj[u].end();i++){
                 if(dist[i->getV()]>dist[u]+i->getWeight()){
                     dist[i->getV()]=dist[u]+i->getWeight();
