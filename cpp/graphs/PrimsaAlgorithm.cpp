@@ -21,6 +21,7 @@ int primMST(int graph[V][V]){
     for(int count=0;count<V;count++){
         int u=-1;
 
+        //to find the key with the minimum distance
         for (int i = 0; i < V; i++)
         {
             if(!mSet[i]&&(u==-1||key[i]<key[u])){
@@ -30,6 +31,7 @@ int primMST(int graph[V][V]){
         mSet[u]=true;
         res+=key[u];
 
+        //to find the picked key's adjacent which have the minimum weight
         for(int v=0;v<V;v++){
             if(graph[u][v]!=0&&mSet[v]==false){
                 key[v]=min(key[v],graph[u][v]);
