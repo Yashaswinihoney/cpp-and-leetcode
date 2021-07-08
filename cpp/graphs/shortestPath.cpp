@@ -42,6 +42,7 @@ class Graph{
     void shortestPath(int s);
 };
 
+//constructor to create the graph
 Graph::Graph(int v) 
 { 
 	this->V = v; 
