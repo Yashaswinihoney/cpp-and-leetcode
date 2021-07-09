@@ -24,6 +24,8 @@ int primMST(int graph[V][V]){
         //to find the key with the minimum distance
         for (int i = 0; i < V; i++)
         {
+            //for the keys that are not the mst and dist of i is less then dist of u
+            //or u = -1, i.e. we have just started traversing
             if(!mSet[i]&&(u==-1||key[i]<key[u])){
                 u=i;
             }
@@ -31,9 +33,13 @@ int primMST(int graph[V][V]){
         mSet[u]=true;
         res+=key[u];
 
-        //to find the picked key's adjacent which have the minimum weight
+        //updating the min distance of the keys from the picked key
         for(int v=0;v<V;v++){
+
+            //only if u & v are connected and v is not alredy in the mst
             if(graph[u][v]!=0&&mSet[v]==false){
+
+                //updating only if the new dist is less than the dist alredy present
                 key[v]=min(key[v],graph[u][v]);
             }
         }        
