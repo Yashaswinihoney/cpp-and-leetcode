@@ -13,7 +13,7 @@ int primMST(int graph[V][V]){
     //initialising distances of all the keys to max
     vector <int> key(V,INF);
 
-    //since till now none of thekeys have been pushed into the set
+    //since till now none of the keys have been pushed into the set
     vector<bool> mSet(V,false);
 
     //coz we start traversing from index = 0
