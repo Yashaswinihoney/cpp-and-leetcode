@@ -28,10 +28,10 @@ Node* construct(int pre[], int n){
     while(index<n){
         root =new Node(pre[index++]);
         if(pre[index++]<root->val){
-            root->left=new Node(pre[index++]);
+            root->left=construct(pre,n);
         }
         else{
-            root->right=new Node(pre[index++]);
+            root->right=construct(pre,n);
         }
     }
     return root;
