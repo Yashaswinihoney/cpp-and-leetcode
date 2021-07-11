@@ -30,6 +30,8 @@ Node* tree(int pre[], int &index, int s, int e, int n){
 
     Node* root=new Node(pre[index++]);
     if(s==e) return root;
+
+    //now we find out the first element thet is greater than root->val
     int i=0;
     for(i=s;i<=e;i++){
         if(pre[i]>pre[index]){
