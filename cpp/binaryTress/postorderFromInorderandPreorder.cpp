@@ -48,7 +48,7 @@ int search(int arr[], int startIn,int endIn, int data)
 	}
 	return i;
 }
-void printPost(int arr[], int pre[],int inStrt, int inEnd)
+void printPost(int in[], int pre[],int inStrt, int inEnd)
 {
 	if (inStrt > inEnd)
 	{
@@ -57,16 +57,16 @@ void printPost(int arr[], int pre[],int inStrt, int inEnd)
 
 	// Find index of next item in preorder
 	// traversal in inorder.
-	int inIndex = search(arr, inStrt, inEnd,pre[preIndex++]);
+	int inIndex = search(in, inStrt, inEnd,pre[preIndex++]);
 
 	// traverse left tree
-	printPost(arr, pre, inStrt, inIndex - 1);
+	printPost(in, pre, inStrt, inIndex - 1);
 
 	// traverse right tree
-	printPost(arr, pre, inIndex + 1, inEnd);
+	printPost(in, pre, inIndex + 1, inEnd);
 
 	// print root node at the end of traversal
-	cout << arr[inIndex] << " ";
+	cout << in[inIndex] << " ";
 }
 
 // Driver code
