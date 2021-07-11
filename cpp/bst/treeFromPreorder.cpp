@@ -22,19 +22,29 @@ void postorder(Node* root){
     cout<<root->val<<endl;
 }
 
-int ind=0;
+//int ind=0;
+
+Node* tree(int pre[], int &index, int s, int e, int n){
+    if(index>=n) return NULL;
+    if(s>e) return NULL;
+
+    Node* root=new Node(pre[index++]);
+    if(s==e) return root;
+    int i=0;
+    for(i=s;i<=e;i++){
+        if(pre[i]>pre[index]){
+            break;
+        }
+    } 
+
+    root->left=tree(pre,index,s,i-1,n);
+    root->right=tree(pre,index,i,e,n);
+    return root;
+}
 
 Node* construct(int pre[], int n){
-    if(ind>=n) return NULL;
-    Node* root;
-    
-    root =new Node(pre[ind++]);
-    if(pre[ind++]<root->val){
-        root->left=construct(pre,n);
-    }
-    else{
-        root->right=construct(pre,n);
-    }
+    int ind=0;
+    Node* root=tree(pre,ind,0,n-1,n);
     return root;
 }
 
