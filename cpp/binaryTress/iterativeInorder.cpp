@@ -10,7 +10,7 @@ class Node{
     Node(int x){
         val=x;
         left=NULL;
-        right==NULL;
+        right=NULL;
     }
 };
 
