@@ -14,20 +14,21 @@ class Node{
 };
 
 void postorder(Node* root){
-    if(root){
-        postorder(root->left);
-        postorder(root->right);
-        cout<<root->val<<endl;
+    if(root==NULL){
+        return;
     }
+    postorder(root->left);
+    postorder(root->right);
+    cout<<root->val<<endl;
 }
 
-int index=0;
+int ind=0;
 
 Node* construct(int pre[], int n){
     Node* root;
-    while(index<n){
-        root =new Node(pre[index++]);
-        if(pre[index++]<root->val){
+    while(ind<n){
+        root =new Node(pre[ind++]);
+        if(pre[ind++]<root->val){
             root->left=construct(pre,n);
         }
         else{
@@ -47,7 +48,7 @@ int main(){
     root->right->left=new Node(6);
     root->right->right=new Node(8);*/
     
-    int preorder[n]={4,2,1,3,7,6,8};
+    int preorder[]={4,2,1,3,7,6,8};
     Node* root=construct(preorder,n);
     postorder(root);
     return 0;
