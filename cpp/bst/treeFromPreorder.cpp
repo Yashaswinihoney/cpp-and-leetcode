@@ -25,15 +25,15 @@ void postorder(Node* root){
 int ind=0;
 
 Node* construct(int pre[], int n){
+    if(ind>=n) return NULL;
     Node* root;
-    while(ind<n){
-        root =new Node(pre[ind++]);
-        if(pre[ind++]<root->val){
-            root->left=construct(pre,n);
-        }
-        else{
-            root->right=construct(pre,n);
-        }
+    
+    root =new Node(pre[ind++]);
+    if(pre[ind++]<root->val){
+        root->left=construct(pre,n);
+    }
+    else{
+        root->right=construct(pre,n);
     }
     return root;
 }
