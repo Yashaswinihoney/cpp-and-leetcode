@@ -29,6 +29,7 @@ bool shortestPath(vector<vector<int> > &adj, int s, int d, int v, vector<int>& p
                 q.push(i);
                 visited[i]=true;
                 dist[i]=dist[curr]+1;
+                pred[i]=curr;
 
                 if(i==d){
                     return true;
@@ -61,8 +62,9 @@ void printShortestDistance(vector<vector<int> > &adj, int s, int d, int v){
 
     cout<<"path length is "<<dist[d]<<endl;
 
-    reverse(path.begin(),path.end());
-    for(int i=0;i<path.size();i++){
+    //reverse(path.begin(),path.end());
+    cout<<"path is ";
+    for(int i=path.size()-1;i>=0;i--){
         cout<<path[i]<<" ";
     }
 
