@@ -43,7 +43,7 @@ void Graph::SCC(){
 
     for(int i=0;i<V;i++){
         if(disc[i]==NIL){
-            SSCUtil(i,disc,low,st,stackMember);
+            SCCUtil(i,disc,low,st,stackMember);
         }
     }
 }
