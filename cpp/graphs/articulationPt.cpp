@@ -45,13 +45,18 @@ void Graph::APUtil(int u, vector<bool>& visited, vector<int>& disc, vector<int>&
             APUtil(v,visited,disc,low,parent,ap);
 
             low[u]=min(low[u],low[v]);
+
+            //if u does not have a parent and it have multiple children
             if(parent[u]==-1&&children){
                 ap[u]=true;
             }
+
+            //if u has a parent and v does not have a backedge
             if(parent[u]!=-1&&low[u]>=disc[u]){
                 ap[u]=true;
             }
         }
+        
         else if(v!=parent[u]){
             low[u]=min(low[u],disc[v]);
         }
