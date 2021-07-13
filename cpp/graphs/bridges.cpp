@@ -43,6 +43,7 @@ void Graph::bridgeUtil(int u, vector<bool>& visited, vector<int>& disc, vector<i
 
             low[u]=min(low[u],low[v]);
 
+            //no backedges
             if(low[v]>disc[u]){
                 cout<<u<<" "<<v<<endl;
             }
