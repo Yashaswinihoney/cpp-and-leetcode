@@ -1,3 +1,5 @@
+//to print sets of strongly connected components
+//in new lines
 #include <iostream>
 #include <vector>
 #include <stack>
