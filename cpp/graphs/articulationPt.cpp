@@ -30,11 +30,15 @@ void Graph::addEdge(int v, int w)
 static int t=0;
 void Graph::APUtil(int u, vector<bool>& visited, vector<int>& disc, vector<int>& low, vector<int>&parent, vector<bool>& ap){
     visited[u]=true;
+
+    //number of children of u
     int children=0;
     disc[u]=low[u]=++t;
 
     for(auto i=adj[u].begin();i!=adj[u].end();i++){
+
         int v=*i;
+        
         if(visited[v]==false){
             children++;
             parent[v]=u;
