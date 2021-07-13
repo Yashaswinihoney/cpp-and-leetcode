@@ -38,7 +38,7 @@ void Graph::APUtil(int u, vector<bool>& visited, vector<int>& disc, vector<int>&
     for(auto i=adj[u].begin();i!=adj[u].end();i++){
 
         int v=*i;
-        
+
         if(visited[v]==false){
             children++;
             parent[v]=u;
@@ -71,7 +71,7 @@ void Graph::AP(){
     //discovery time
     vector<int> disc(V);
 
-    //low time
+    //lowest reachable discovery time
     vector<int> low(V);
 
     for(int i=0;i<V;i++){
