@@ -44,7 +44,7 @@ void Graph::APUtil(int u, vector<bool>& visited, vector<int>& disc, vector<int>&
             parent[v]=u;
             APUtil(v,visited,disc,low,parent,ap);
 
-            low[u]=min(low[u],low[u]);
+            low[u]=min(low[u],low[v]);
             if(parent[u]==-1&&children){
                 ap[u]=true;
             }

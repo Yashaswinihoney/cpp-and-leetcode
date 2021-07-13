@@ -28,8 +28,41 @@ void Graph::addEdge(int v, int w)
 	adj[w].push_back(v); // Note: the graph is undirected 
 }
 
+void Graph::bridgeUtil(int u, vector<bool>& visited, vector<int>& disc, vector<int>& low, vector<int>& parent){
+    visited[u]=true;
+    static int t=0;
+
+    disc[u]=low[u]=++t;
+
+    for(auto i=adj[u].begin();i!=adj[u].begin();i++){
+        int v=*i;
+
+        if(visited[v]==false){
+            parent[v]=u;
+            bridgeUtil(v,visited,disc,low,parent);
+
+            low[u]=min(low[u],low[v]);
+
+            if(low[v]>disc[u]){
+                cout<<u<<" "<<v<<endl;
+            }
+        }
+        else if(v!=parent[u]){
+            low[u]=min(low[u],disc[v]);
+        }
+    }
+}
+
 void Graph::bridge(){
-    
+    vector<bool> visited(V,false);
+    vector<int> disc(V);
+    vector<int>low(V);
+    vector<int> parent(V);
+    for(int i=0;i<V;i++){
+        if(visited[i]==false){
+            bridgeUtil(i,visited,disc,low,parent);
+        }
+    }
 }
 
 int main() 
