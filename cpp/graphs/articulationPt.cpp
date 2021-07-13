@@ -54,10 +54,20 @@ void Graph::APUtil(int u, vector<bool>& visited, vector<int>& disc, vector<int>&
     }
 }
 void Graph::AP(){
+
+    // to strore the visi elements
     vector<bool> visited(V,false);
+
+    //to store the elements that are Articulation points 
     vector<bool> ap(V,false);
+
+    //parent of points
     vector<int> parent(V,-1);
+
+    //discovery time
     vector<int> disc(V);
+
+    //low time
     vector<int> low(V);
 
     for(int i=0;i<V;i++){
