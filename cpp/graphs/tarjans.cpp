@@ -60,9 +60,10 @@ void Graph::SCCUtil(int u, vector<int> &disc, vector<int>& low, stack<int>& st, 
 			st.pop(); 
 		}
 
-		w=st.top();cout<<w<<endl;
+		w=st.top();
+		cout<<w<<endl;
 		stackMember[w]=false;
-		st.pop();
+		st.pop();  
 	}
 }
 
