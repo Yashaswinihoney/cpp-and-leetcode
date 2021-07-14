@@ -10,10 +10,11 @@ class Graph
 {
     int V;    // No. of vertices
     list<int> *adj;    // adjacency lists
+    void DFSUtil(int s,vector<bool>& visited);
 public:
     Graph(int V);  // Constructor
     void addEdge(int v, int w); // to add an edge to graph
-    void DFS(int s);  // prints all vertices in DFS manner
+    void DFS();  // prints all vertices in DFS manner
     // from a given source.
 };
  
@@ -28,9 +29,8 @@ void Graph::addEdge(int v, int w)
     adj[v].push_back(w); // Add w to v’s list.
 }
 
-void Graph::DFS(int s){
+void Graph::DFSUtil(int s, vector<bool>& visited){
     stack<int> st;
-    vector<bool> visited(V,false);
     
     st.push(s);
     while(!st.empty()){
@@ -50,6 +50,14 @@ void Graph::DFS(int s){
         }
     }
 }
+void Graph::DFS(){
+    vector<bool> visited(V,false);
+    for(int i=0;i<V;i++){
+        if(visited[i]==false){
+            DFSUtil(i, visited);
+        }
+    }
+}
 
 int main()
 {
@@ -61,7 +69,7 @@ int main()
     g.addEdge(1, 4);
  
     cout << "Following is Depth First Traversal\n";
-    g.DFS(0);
+    g.DFS();
  
     return 0;
 }
