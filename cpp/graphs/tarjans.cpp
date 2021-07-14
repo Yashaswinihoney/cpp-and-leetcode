@@ -31,8 +31,39 @@ void Graph::addEdge(int v, int w)
 	adj[v].push_back(w); 
 } 
 
+static int t=0;
 void Graph::SCCUtil(int u, vector<int> &disc, vector<int>& low, stack<int>& st, vector<bool>& stackMember){
+	disc[u]=low[u]=++t;
+	st.push(u);
+	stackMember[u]=true;
 
+	for(auto i=adj[u].begin();i!=adj[u].end();i++){
+		int v=*i;
+
+		if(disc[v]==-1){
+			SCCUtil(v,disc,low,st,stackMember);
+
+			low[u]=min(low[u],low[v]);
+		}
+
+		else if(stackMember[v]==true){
+			low[u]=min(low[u],disc[v]);
+		}
+	}
+
+	int w=0;
+	if(low[u]==disc[u]){
+		while(st.top()!=u){
+			w=st.top();
+			cout<<w<<" ";
+			stackMember[w]=false;
+			st.pop(); 
+		}
+
+		w=st.top();cout<<w<<endl;
+		stackMember[w]=false;
+		st.pop();
+	}
 }
 
 void Graph::SCC(){
