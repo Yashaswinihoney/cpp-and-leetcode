@@ -4,6 +4,9 @@
 #define NIL -1
 using namespace std; 
 
+//articulation pt is a point removing which from the graph is
+//increases the number of components in the graph
+
 class Graph 
 { 
 	int V; 
