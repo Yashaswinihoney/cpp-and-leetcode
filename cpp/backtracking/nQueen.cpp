@@ -17,7 +17,7 @@ void printsol(int board[N][N]){
 
 bool isSafe(int row, int col){
 
-    //we just have to check before the regior
+    //we just have to check before the region
     //where [row][col] 
 
     //checking in the same row
@@ -46,6 +46,7 @@ bool solverec(int col){
         return true;
 
     for(int i=0;i<N;i++){
+
         if(isSafe(i,col)){
             board[i][col]=1;
 
@@ -56,6 +57,8 @@ bool solverec(int col){
             board[i][col]=0;
         }
     }
+
+    return false;
 }
 
 bool solve(){
