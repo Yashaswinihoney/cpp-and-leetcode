@@ -2,6 +2,7 @@
 #include<vector>
 #include<unordered_set>
 using namespace std;
+#define m 100000009
 int main(){
     int n;
     cin >> n;
@@ -17,9 +18,10 @@ int main(){
     int count=0;
     for(int i = 0; i < n;i++){
         if(s.find(abs(v[i]-60))!=s.end()){
-            count++;
+            count=count%m+1;
         }
     }
+    count=count%m;
     cout<<count<<endl;
     return 0;
 }
