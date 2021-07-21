@@ -31,6 +31,7 @@ bool isSafe(int row, int col){
         if(board[i][j]) 
             return false;
     }
+    
 
     //now checking in the lower diagonal after the point
     for(int i=row, j=col;j>=0&&i<N;i++,j--){
