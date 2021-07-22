@@ -20,7 +20,7 @@ int fib(int n){
 }
 
 int main(){
-    int n=5;
-    cout<<fib(n)<<endl;
+    //int n=5;
+    cout<<fib(6)<<endl;
     return 0;
 }
