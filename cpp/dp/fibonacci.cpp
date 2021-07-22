@@ -4,6 +4,7 @@ using namespace std;
 
 vector <int> v(1000000,-1);
 
+//top down solution
 int fib(int n){
     if(v[n]==-1){
         int res;
