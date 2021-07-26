@@ -74,7 +74,14 @@ vector<int> patienceSorting(vector<int> arr){
 }
 
 int main(){
-    vector<int> arr={6,12,2,8,3,7};
+    vector<int> arr;
+    arr.push_back(6);
+    arr.push_back(12);
+    arr.push_back(2);
+    arr.push_back(8);
+    arr.push_back(3);
+    arr.push_back(7);
+    //{6,12,2,8,3,7};
     patienceSorting(arr);
     return 0;
 }
