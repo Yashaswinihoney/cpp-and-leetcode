@@ -28,9 +28,10 @@ void lcs(char* X, char* Y, int m, int n){
 
     while(i>0&&j>0){
         if(X[i-1]==Y[j-1]){
-            lcs[--index]=X[i];
+            lcs[index-1]=X[i];
             i--;
             j--;
+            index--;
         }
         else if(L[i-1][j]>L[i][j-1]){
             i--;
