@@ -21,6 +21,8 @@ int getCount(int coins[], int n, int sum){
             }
         }
     }
+
+    return dp[sum][n];
 }
 
 int main() {
