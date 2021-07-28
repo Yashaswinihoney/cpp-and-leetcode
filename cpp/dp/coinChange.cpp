@@ -16,7 +16,7 @@ int getCount(int coins[], int n, int sum){
         for(int j=0;j<=n;j++){
             dp[i][j]=dp[i][j-1];
 
-            if(coins[j-1]<=sum){
+            if(coins[j-1]<=i){
                 dp[i][j]+=dp[i-coins[j-1]][j];
             }
         }
