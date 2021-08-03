@@ -43,7 +43,7 @@ Node* buildTree(int inorder[], int preorder[], int start, int end){
     if(start==end)
         return root;
     
-    int pos=search(preorder,start, end,curr);
+    int pos=search(inorder,start, end,curr);
     root->left=buildTree(inorder, preorder, start, pos-1);
     root->right=buildTree(inorder, preorder, pos+1,end);
     return root;
