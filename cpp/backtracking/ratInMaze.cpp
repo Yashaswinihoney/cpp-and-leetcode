@@ -64,7 +64,7 @@ bool solveMaze(int maze[N][N]){
     };
     //memset(sol,0,sizeof(sol));
 
-    if(solveMazeUtil(maze,0,0,sol)) return true; printSolution(sol);
+    if(solveMazeUtil(maze,0,0,sol)) printSolution(sol); return true;
 
     return false;
 }
