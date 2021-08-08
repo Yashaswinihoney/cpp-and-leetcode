@@ -1,1 +1,0 @@
-{"name":"Local: problemSet","url":"/Users/yashaswinisharma/Desktop/cpp-and-leetcode/codechef/problemSet.cpp","tests":[{"id":1628243052804,"input":"3\n1 4 3 2\n4 5 5 5\n2 2 2 2","output":"2\n1\n0"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/yashaswinisharma/Desktop/cpp-and-leetcode/codechef/problemSet.cpp","group":"local","local":true}
