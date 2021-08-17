@@ -7,7 +7,8 @@ using namespace std;
 int res(int f, int e){
     int dp[f+1][e+1];
     for(int i=0;i<=f;i++){
-        dp[i][0]=i;
+        dp[i][0]=0;
+        dp[i][1]=i;
     }
 
     for(int i=1;i<=e;i++){
