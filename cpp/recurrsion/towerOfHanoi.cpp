@@ -1,25 +1,26 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-int res;
-void tower(int n, char A, char B, char C){
+//int res;
+void tower(int n, char s, char a, char d){
     if(n==1){
-        //res+=1;
+        cout<<"move disk "<<n<<" from "<<s<<" to "<<d<<endl;
         return;
     }
 
-    res+=1;
-    tower(n-1,A,C,B);
-    res+=1;
-    tower(n-1,B,A,C);
+    //res+=1;
+    tower(n-1,s,d,a);
+    cout<<"move disk "<<n<<" from "<<s<<" to "<<a<<endl;
+    //res+=1;
+    tower(n-1,a,s,d);
     //return res;
 }
 int main(){
-    int n=3;
-    res=0;
-    char A, B, C;
+    int n=4;
+    //res=0;
+    //char s, a, d;
     
-    tower(n,A,B,C);
-    cout<<res;
+    tower(n,'S','A','D');
+    //cout<<res;
     return 0;
 }
